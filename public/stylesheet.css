@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Gabarito';
+    src: url('Gabarito-Regular.eot');
+    src: url('Gabarito-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gabarito-Regular.woff2') format('woff2'),
+        url('Gabarito-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/Gabarito-Regular.eot');
+  src: url('./assets/Gabarito-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./assets/Gabarito-Regular.woff2') format('woff2'),
+    url('./assets/Gabarito-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  font-family: Gabarito;
+
+  --background: #f5f5f5;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --foreground: #767676;
+  --foreground-primary: #1e2c37;
+  --foreground-secondary: #1e2c37;
+}
+
+.dark {
+
+  --background: #0a0a0a;
+  --bg-primary: #262626;
+  --bg-secondary: #171717;
+  --foreground: #959595;
+  --foreground-primary: #ffffff;
+  --foreground-secondary: #ffffff;
+
+}
+
+body {
+  background-color: #f5f5f5;
+}
