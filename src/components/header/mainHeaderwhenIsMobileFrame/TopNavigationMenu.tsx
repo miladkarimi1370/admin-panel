@@ -17,11 +17,11 @@ export default function TopNavigationMenu() {
         <>
             <div className={`sticky top-0 
             ${open ? "lg:w-full xl:wfull" : "lg:w-full xl:w-full"}
-                  lg:justify-self-end w-full h-[7vh] lg:h-[6vh]  uppercase flex justify-center items-center
+                  lg:justify-self-center w-full h-[7vh] lg:h-[6vh]  uppercase flex justify-center items-center
                    bg-[var(--bg-primary)]  border-b border-b-gray-400/40 z-1000
                    transition-all duration-300 ease-in-out
                    `}>
-                <section className="w-11/12  h-auto flex justify-center items-center ">
+                <section className="w-11/12  gap-2 flex justify-center items-center ">
                     <div className="w-4/12  flex justify-start gap-4 items-center">
                         {/* شروع قسمت منوی ناوبری   */}
 

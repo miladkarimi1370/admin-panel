@@ -1,7 +1,7 @@
 
 import BaseStructure from "./BaseStructure"
 import { ThemeProvider } from "./components/theme-provider/themeProvider"
-
+import "react-day-picker/style.css";
 
 
 

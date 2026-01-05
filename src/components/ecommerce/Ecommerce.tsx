@@ -10,7 +10,7 @@ export default function Ecommerce() {
 
     return (
         <>
-            <section className={` w-full   flex justify-center items-center flex-wrap  transition-all duration-300 ease-in-out  `}>
+            <section className={` w-full   flex justify-center items-center flex-wrap  transition-all  duration-300 ease-in-out  `}>
                 <div className="w-11/12 flex justify-center items-center flex-wrap ">
                     <div className="xl:flex justify-evenly items-start ">
                         <div className="w-full  flex justify-evenly items-center flex-wrap xl:w-8/12">
