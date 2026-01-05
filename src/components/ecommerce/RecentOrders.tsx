@@ -77,7 +77,7 @@ export default function RecentOrders() {
 
     return (
         <>
-            <Card className="w-10/12 xl:w-23/24  mb-4 border-0 shadow-2xl mt-6 bg-[var(--bg-primary)]">
+            <Card className="w-23/24  mb-4 border-0 shadow-2xl mt-6 bg-[var(--bg-primary)]">
                 <CardHeader>
                     <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">recent orders</CardTitle>
 

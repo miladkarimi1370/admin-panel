@@ -23,7 +23,7 @@ import LineChart from "./LineChart";
 export default function Overview() {
     return (
         <>
-            <Card className="w-10/12 xl:w-11/12 mb-4 border-0 shadow-2xl mt-28  bg-[var(--bg-primary)]">
+            <Card className="w-10/12 xl:w-11/12 mb-4 border-0 shadow-2xl mt-16  bg-[var(--bg-primary)]">
                 <CardHeader>
                     <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">overview</CardTitle>
 

@@ -79,7 +79,7 @@ export default function SalesTarget() {
     };
     return (
         <>
-            <Card className="bg-[var(--bg-primary)] border-0 flex justify-center items-center md:flex-row w-10/12 shadow-2xl xl:mt-28">
+            <Card className="bg-[var(--bg-primary)] border-0 flex justify-center items-center md:flex-row w-10/12 shadow-2xl xl:mt-16">
                 <CardHeader className=" w-11/12 rounded-2xl px-3 py-4 md:flex  md:flex-wrap md:mx-4 "  >
                     <div className="w-full  flex justify-between">
                         <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">sales target</CardTitle>

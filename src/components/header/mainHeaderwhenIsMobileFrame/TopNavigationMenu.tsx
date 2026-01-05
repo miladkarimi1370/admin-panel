@@ -15,8 +15,8 @@ export default function TopNavigationMenu() {
     const { open } = openOrCloseDrawerStore(state => state);
     return (
         <>
-            <div className={`fixed 
-            ${open ? "lg:w-9/12 xl:w-19/24" : "lg:9/12 xl:w-full"}
+            <div className={`sticky top-0 
+            ${open ? "lg:w-full xl:wfull" : "lg:w-full xl:w-full"}
                   lg:justify-self-end w-full h-[7vh] lg:h-[6vh]  uppercase flex justify-center items-center
                    bg-[var(--bg-primary)]  border-b border-b-gray-400/40 z-1000
                    transition-all duration-300 ease-in-out

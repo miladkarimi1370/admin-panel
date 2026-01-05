@@ -12,127 +12,129 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-
+import secondLogo from "@/components/icons/logo-light-streamline.webp";
 import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore";
 import darkLogo from "@/components/icons/logo-dark-full.webp";
-
+import secondDarkLogo from "@/components/icons/logo-dark-streamline.webp"
 export default function MainDrawerMenu() {
     const { open, dark } = openOrCloseDrawerStore();
 
 
     return (
         <>
+            <div className="relative w-full ">
+                <section className={`bg-[var(--bg-primary)]  ${open ? "w-3/24" : "w-1/24"} h-[100vh] flex justify-center items-start pt-4 fixed top-0  transition-all duration-300 ease-in-out`}>
+                    <div className={`  ${open ? "w-11/12" : "w-full"}`}>
+                        <div className="">
+                            <div className={`flex justify-between items-center ${open ? '' : "justify-center"}`}>
+                                <h2 className="uppercase text-[var(--foreground-primary)] tracking-widest">
+                                    <img src={open && !dark ? myLogo : open && dark ? darkLogo : !open && !dark ? secondLogo : !open && dark ? secondDarkLogo : secondDarkLogo} className={`${open ? "visible" : "lg:invisible"} `} alt="myLogo" />
+                                </h2>
 
-            <section className={`bg-[var(--bg-primary)]  ${open ? "w-68 max-w-68" : "w-18 max-w-18"} h-full flex justify-center items-start pt-4 fixed transition-all duration-300 ease-in-out`}>
-                <div className={`  ${open ? "w-11/12" : "w-full"}`}>
-                    <div className="">
-                        <div className={`flex justify-between items-center ${open ? '' : "justify-center"}`}>
-                            <h2 className="uppercase text-[var(--foreground-primary)] tracking-widest">
-                                <img src={open && !dark ? myLogo : open && dark ? darkLogo : darkLogo} className={`${open ? "visible" : "lg:invisible"} `} alt="myLogo" />
-                            </h2>
+                            </div>
 
+                        </div>
+
+
+                        <div className="mt-4 ">
+                            <h4 className={` uppercase scroll-m-20 text-lg font-semibold tracking-tight text-[var(--foreground)] px-4 ${open ? "block" : "hidden"}`}>
+                                dashboard
+                            </h4>
+                            <ul className=" rounded-2xl w-full flex justify-start items-center px-2 flex-col">
+
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer ">
+                                                <ShoppingCartIcon className="group-hover:text-[var(--foreground-primary)]   transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">ecommerce</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`} >ecommerce</span>
+                                    </a>
+                                </li>
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer">
+                                                <RocketIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">project</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>project</span>
+                                    </a>
+                                </li>
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer ">
+                                                <AtomIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">marketing</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>marketing</span>
+                                    </a>
+                                </li>
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer ">
+                                                <ChartNoAxesCombinedIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">analytic</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>analytic</span>
+                                    </a>
+                                </li>
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer ">
+                                                <GitGraphIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">graph</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>graph</span>
+                                    </a>
+
+                                </li>
+                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                        <Tooltip>
+                                            <TooltipTrigger className="cursor-pointer ">
+                                                <LogOutIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">log out</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>log-out</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
 
+                </section>
+            </div>
 
-                    <div className="mt-4 ">
-                        <h4 className={` uppercase scroll-m-20 text-lg font-semibold tracking-tight text-[var(--foreground)] px-4 ${open ? "block" : "hidden"}`}>
-                            dashboard
-                        </h4>
-                        <ul className=" rounded-2xl w-full flex justify-start items-center px-2 flex-col">
-
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer ">
-                                            <ShoppingCartIcon className="group-hover:text-[var(--foreground-primary)]   transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">ecommerce</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`} >ecommerce</span>
-                                </a>
-                            </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer">
-                                            <RocketIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">project</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>project</span>
-                                </a>
-                            </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer ">
-                                            <AtomIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">marketing</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>marketing</span>
-                                </a>
-                            </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer ">
-                                            <ChartNoAxesCombinedIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">analytic</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>analytic</span>
-                                </a>
-                            </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer ">
-                                            <GitGraphIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">graph</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>graph</span>
-                                </a>
-
-                            </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                    <Tooltip>
-                                        <TooltipTrigger className="cursor-pointer ">
-                                            <LogOutIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                        </TooltipTrigger>
-                                        <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                            <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">log out</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-
-                                    <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>log-out</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </section>
         </>
     )
 }
