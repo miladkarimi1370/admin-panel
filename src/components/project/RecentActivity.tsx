@@ -80,9 +80,9 @@ export default function RecentActivity() {
 
     return (
         <>
-            <Card className="w-11/12  border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
+            <Card className="w-11/12 md:w-5/12 max-h-[849px] xl:w-4/12 overflow-y-scroll md:order-2  border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
                 <CardHeader>
-                    <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">current tasks</CardTitle>
+                    <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">recent activity</CardTitle>
 
                     <CardAction>
                         <Button variant="outline" className="cursor-pointer hover:border-blue-500 hover:text-blue-500 border-gray-300 border-2 transition capitalize text-sm rounded-lg text-[var(--foreground-primary)]"> all tasks</Button>

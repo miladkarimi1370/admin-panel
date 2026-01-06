@@ -20,7 +20,7 @@ export default function Project() {
                             <CalenderAndSchedule />
 
                         </div>
-                        <div className="w-full flex justify-center xl:justify-center items-center bg-amber-300 flex-wrap">
+                        <div className="w-full flex justify-center md:justify-around md:items-start xl:flex-nowrap xl:justify-evenly xl:gap-8 xl:w-23/24 xl items-center  flex-wrap">
                             <CurrentTasks />
                             <TaskOverview />
                             <RecentActivity />

@@ -1,3 +1,4 @@
+import CopyRight from "./components/Copyright/CopyRight";
 import Ecommerce from "./components/ecommerce/Ecommerce";
 
 import TopNavigationMenu from "./components/header/mainHeaderwhenIsMobileFrame/TopNavigationMenu";
@@ -24,6 +25,9 @@ export default function BaseStructure() {
                     <TopNavigationMenu />
                     {/* <Ecommerce /> */}
                     <Project />
+
+
+                    <CopyRight />
                 </div>
             </div>
         </>

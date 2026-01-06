@@ -136,9 +136,9 @@ export default function TaskOverview() {
                 ticks: {
                     color: dark ? "#cecece" : "#262626",
                     stepSize: selected === "daily" ? 5 : 50
-                } , 
-                grid : {
-                    color : dark ? "#171717" : "#f5f5f5"
+                },
+                grid: {
+                    color: dark ? "#171717" : "#f5f5f5"
                 }
             },
 
@@ -149,7 +149,7 @@ export default function TaskOverview() {
 
     return (
         <>
-            <Card className="w-11/12  border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
+            <Card className="w-11/12 md:order-3 xl:w-4/12 border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
                 <CardHeader>
                     <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">task overview</CardTitle>
 

@@ -68,7 +68,7 @@ export default function CurrentTasks() {
     ]
     return (
         <>
-            <Card className="w-11/12 border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
+            <Card className="w-11/12 md:w-5/12 xl:w-4/12  md:order-1 border-0 shadow-2xl mt-8  bg-[var(--bg-primary)]">
                 <CardHeader>
                     <CardTitle className="text-[var(--foreground-primary)] font-bold text-xl capitalize tracking-wider">current tasks</CardTitle>
 
