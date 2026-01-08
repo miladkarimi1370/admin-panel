@@ -6,11 +6,19 @@ type DrawerStore = {
     dark: boolean;
     setOpenAndClose: () => void;
     setDark: () => void;
+    accountDrawer: boolean,
+    setAccountDrawer: (value: boolean) => void
 }
 
 export const openOrCloseDrawerStore = create<DrawerStore>((set) => ({
     open: true,
-    dark: false ,
+    dark: false,
+    accountDrawer: false,
+    setAccountDrawer(value) {
+        set(() => ({
+            accountDrawer: value
+        }))
+    },
     setOpenAndClose() {
         set((state: any) => ({
             open: !state.open

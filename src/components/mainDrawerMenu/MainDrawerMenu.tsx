@@ -2,8 +2,7 @@
 import { ShoppingCartIcon } from "../icons/lucide-shopping-cart";
 import { RocketIcon } from "../icons/lucide-rocket";
 import { AtomIcon } from "../icons/lucide-atom";
-import { ChartNoAxesCombinedIcon } from "../icons/lucide-chart-no-axes-combined";
-import { GitGraphIcon } from "../icons/lucide-git-graph";
+
 import { LogOutIcon } from "../icons/lucide-log-out";
 import myLogo from "@/components/icons/logo-light-full.webp";
 
@@ -16,6 +15,8 @@ import secondLogo from "@/components/icons/logo-light-streamline.webp";
 import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore";
 import darkLogo from "@/components/icons/logo-dark-full.webp";
 import secondDarkLogo from "@/components/icons/logo-dark-streamline.webp"
+import { ShieldUser } from "lucide-react";
+import { NavLink } from "react-router-dom";
 export default function MainDrawerMenu() {
     const { open, dark } = openOrCloseDrawerStore();
 
@@ -43,7 +44,7 @@ export default function MainDrawerMenu() {
                             <ul className=" rounded-2xl w-full flex justify-start items-center px-2 flex-col">
 
                                 <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                    <NavLink to={"/ecommerce"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">
                                                 <ShoppingCartIcon className="group-hover:text-[var(--foreground-primary)]   transition" />
@@ -54,10 +55,10 @@ export default function MainDrawerMenu() {
                                         </Tooltip>
 
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`} >ecommerce</span>
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                    <NavLink to={"/project"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer">
                                                 <RocketIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
@@ -68,10 +69,10 @@ export default function MainDrawerMenu() {
                                         </Tooltip>
 
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>project</span>
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                    <NavLink to={"/marketing"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">
                                                 <AtomIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
@@ -82,37 +83,23 @@ export default function MainDrawerMenu() {
                                         </Tooltip>
 
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>marketing</span>
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
+                                    <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">
-                                                <ChartNoAxesCombinedIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
+                                                <ShieldUser className="group-hover:text-[var(--foreground-primary)]  transition" />
                                             </TooltipTrigger>
                                             <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">analytic</p>
+                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">account</p>
                                             </TooltipContent>
                                         </Tooltip>
 
-                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>analytic</span>
-                                    </a>
+                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>account</span>
+                                    </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
-                                    <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
-                                        <Tooltip>
-                                            <TooltipTrigger className="cursor-pointer ">
-                                                <GitGraphIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
-                                            </TooltipTrigger>
-                                            <TooltipContent side="right" className={`${open ? "hidden" : "inline"} `}>
-                                                <p className="bg-[var(--background)] capitalize text-base font-bold mx-3">graph</p>
-                                            </TooltipContent>
-                                        </Tooltip>
 
-                                        <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>graph</span>
-                                    </a>
-
-                                </li>
                                 <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
                                     <a href="#" className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>

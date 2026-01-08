@@ -1,13 +1,16 @@
-import CopyRight from "./components/Copyright/CopyRight";
-import Ecommerce from "./components/ecommerce/Ecommerce";
 
+
+
+import { Outlet } from "react-router-dom";
 import TopNavigationMenu from "./components/header/mainHeaderwhenIsMobileFrame/TopNavigationMenu";
 import MainDrawerMenu from "./components/mainDrawerMenu/MainDrawerMenu";
-import Project from "./components/project/Project";
+
 import { openOrCloseDrawerStore } from "./store/openAndCloseDarwerStore";
 
 export default function BaseStructure() {
+
     const { open } = openOrCloseDrawerStore();
+
     return (
         <>
             <div className="
@@ -23,11 +26,8 @@ export default function BaseStructure() {
                 </div>
                 <div className={`${open ? "w-21/24" : "w-23/24"}  `}>
                     <TopNavigationMenu />
-                    {/* <Ecommerce /> */}
-                    <Project />
+                    <Outlet />
 
-
-                    <CopyRight />
                 </div>
             </div>
         </>

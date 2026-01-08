@@ -12,13 +12,13 @@ import SettingComponents from "./SettingComponent"
 
 
 export default function TopNavigationMenu() {
-    const { open } = openOrCloseDrawerStore(state => state);
+    const { open , accountDrawer } = openOrCloseDrawerStore(state => state);
     return (
         <>
             <div className={`sticky top-0 
             ${open ? "lg:w-full xl:wfull" : "lg:w-full xl:w-full"}
                   lg:justify-self-center w-full h-[7vh] lg:h-[6vh]  uppercase flex justify-center items-center
-                   bg-[var(--bg-primary)]  border-b border-b-gray-400/40 z-1000
+                   bg-[var(--bg-primary)]  border-b border-b-gray-400/40 ${accountDrawer ? "z-1" : "z-100"}
                    transition-all duration-300 ease-in-out
                    `}>
                 <section className="w-11/12  gap-2 flex justify-center items-center ">
