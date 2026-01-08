@@ -32,10 +32,12 @@ import { Switch } from "@/components/ui/switch"
 import { Bell, LogOut, Shield, User2 } from "lucide-react"
 import { useEffect, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 export default function NotificationAccount() {
+
+    const { pathname } = useLocation()
 
     const [checkedR, setChechedR] = useState("nothing");
     const [checkSwitchForCheckBox, setCheckSwithcForCheckBos] = useState<boolean>(true)
@@ -95,19 +97,19 @@ export default function NotificationAccount() {
                     <div className="xl:col-span-1">
                         <ul className=" rounded-2xl w-11/12  justify-start items-start px-2 flex-col hidden xl:flex">
 
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <User2 className="group-hover:text-[var(--foreground-primary)]   transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3 ">profile</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/security" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/security"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Shield className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">security</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/notification" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/notification"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Bell className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">notification</p>
@@ -250,7 +252,7 @@ export default function NotificationAccount() {
                                 <Checkbox
                                     id="follow"
                                     value={"follow"}
-                                     className={`w-6 h-6 translate-y-1 ${checkBoxChecked.follow ? "bg-blue-500 text-white" : ""}`}
+                                    className={`w-6 h-6 translate-y-1 ${checkBoxChecked.follow ? "bg-blue-500 text-white" : ""}`}
                                     checked={checkBoxChecked.follow}
                                     onCheckedChange={(e) => handleChangeForCheckBox("follow", e)}
                                 />

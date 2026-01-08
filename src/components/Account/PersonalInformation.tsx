@@ -18,7 +18,7 @@ import { email, string, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 import { Bell, LogOut, Shield, User2 } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 type FormData = {
     firstName: string
@@ -50,7 +50,7 @@ export default function PersonalInformation() {
 
     const onSubmit = handleSubmit((data) => console.log(data))
 
-
+    const { pathname } = useLocation();
 
 
 
@@ -75,19 +75,19 @@ export default function PersonalInformation() {
                     <div className="xl:col-span-1">
                         <ul className=" rounded-2xl w-11/12  justify-start items-start px-2 flex-col hidden xl:flex">
 
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)]  ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <User2 className="group-hover:text-[var(--foreground-primary)]   transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3 ">profile</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)]  ${pathname === "/account/security" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/security"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Shield className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">security</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)]  ${pathname === "/account/notification" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/notification"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Bell className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">notification</p>
@@ -110,49 +110,49 @@ export default function PersonalInformation() {
                         <div className="w-full my-10  justify-start items-center gap-2 border-0 shadow-none hidden xl:flex">
                             <Avatar className="w-16 h-16">
                                 <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
+                                <AvatarFallback className="text-[var(--foreground)]">CN</AvatarFallback>
                             </Avatar>
                             <Button variant={"destructive"} className="capitalize bg-blue-500 text-white cursor-pointer">upload image</Button>
-                            <Button variant={"outline"} className="capitalize  text-shadow-blue-500 border-blue-500 cursor-pointer">remove image</Button>
+                            <Button variant={"outline"} className="capitalize text-[var(--foreground)] text-shadow-blue-500 border-blue-500 cursor-pointer">remove image</Button>
                         </div>
                         <form onSubmit={onSubmit} className=" *:py-2 *:my-2 **:rounded-2xl ">
                             <div className="w-full flex flex-col my-2">
-                                <label>First Name :</label>
+                                <label className="text-[var(--foreground-primary)]">First Name :</label>
                                 <input {...register("firstName")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500  text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>User Name :</label>
+                                <label className="text-[var(--foreground-primary)]">User Name :</label>
                                 <input {...register("userName")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>email :</label>
+                                <label className="text-[var(--foreground-primary)]">email :</label>
                                 <input {...register("email")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>Phone Number :</label>
+                                <label className="text-[var(--foreground-primary)]">Phone Number :</label>
                                 <input {...register("phoneNumber")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>country :</label>
+                                <label className="text-[var(--foreground-primary)]">country :</label>
                                 <input {...register("country")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>Address :</label>
+                                <label className="text-[var(--foreground-primary)]">Address :</label>
                                 <input {...register("address")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>City :</label>
+                                <label className="text-[var(--foreground-primary)]">City :</label>
                                 <input {...register("city")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>Postal Code :</label>
+                                <label className="text-[var(--foreground-primary)]">Postal Code :</label>
                                 <input {...register("postalCode")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>

@@ -19,11 +19,12 @@ import { AtomIcon } from "@/components/icons/lucide-atom";
 import { LogOutIcon } from "@/components/icons/lucide-log-out";
 import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore";
 import { ShieldUser } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 
 export default function DrawerMenuComponent() {
+    const { pathname } = useLocation();
 
     const { open, setOpenAndClose } = openOrCloseDrawerStore();
     const handleClick: any = (e: any): void => {
@@ -68,25 +69,25 @@ export default function DrawerMenuComponent() {
                             </h4>
                             <ul className=" rounded-2xl w-full flex justify-start items-center px-2 flex-col">
 
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/ecommerce" ? "bg-[var(--background)]" : ""} `}>
                                     <NavLink to={"/ecommerce"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <ShoppingCartIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
                                         <span className="group-hover:text-[var(--foreground-primary)]  transition">ecommerce</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/project" ? "bg-[var(--background)]" : ""} `}>
                                     <NavLink to={"/project"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <RocketIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
                                         <span className="group-hover:text-[var(--foreground-primary)]  transition">project</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/marketing" ? "bg-[var(--background)]" : ""} `}>
                                     <NavLink to={"/marketing"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <AtomIcon className="group-hover:text-[var(--foreground-primary)]  transition" />
                                         <span className="group-hover:text-[var(--foreground-primary)]  transition">marketing</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""} `}>
                                     <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <ShieldUser className="group-hover:text-[var(--foreground-primary)]  transition" />
                                         <span className="group-hover:text-[var(--foreground-primary)]  transition">account</span>

@@ -16,10 +16,14 @@ import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore";
 import darkLogo from "@/components/icons/logo-dark-full.webp";
 import secondDarkLogo from "@/components/icons/logo-dark-streamline.webp"
 import { ShieldUser } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 export default function MainDrawerMenu() {
     const { open, dark } = openOrCloseDrawerStore();
 
+    const { pathname } = useLocation();
+   
+    
+    
 
     return (
         <>
@@ -43,7 +47,7 @@ export default function MainDrawerMenu() {
                             </h4>
                             <ul className=" rounded-2xl w-full flex justify-start items-center px-2 flex-col">
 
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/ecommerce" ? "bg-[var(--background)]" : ""}`}>
                                     <NavLink to={"/ecommerce"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">
@@ -57,7 +61,7 @@ export default function MainDrawerMenu() {
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`} >ecommerce</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/project" ? "bg-[var(--background)]" : ""}`}>
                                     <NavLink to={"/project"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer">
@@ -71,7 +75,7 @@ export default function MainDrawerMenu() {
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>project</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/marketing" ? "bg-[var(--background)]" : ""}`}>
                                     <NavLink to={"/marketing"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">
@@ -85,7 +89,7 @@ export default function MainDrawerMenu() {
                                         <span className={`group-hover:text-[var(--foreground-primary)]  transition ${open ? "inline" : "hidden"}`}>marketing</span>
                                     </NavLink>
                                 </li>
-                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""}`}>
                                     <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                         <Tooltip>
                                             <TooltipTrigger className="cursor-pointer ">

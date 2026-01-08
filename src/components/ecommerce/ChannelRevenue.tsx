@@ -42,8 +42,8 @@ export default function ChannelRevenue() {
 
                     <CardAction>
                         <Select>
-                            <SelectTrigger className=" bg-[var(--background)] border-none py-1 ring-0  focus-visible:ring-0 focus:border-0  cursor-pointer capitalize w-30 text-md">
-                                <SelectValue placeholder="month" />
+                            <SelectTrigger className=" bg-[var(--background)] text-[var(--foreground)] border-none py-1 ring-0  focus-visible:ring-0 focus:border-0  cursor-pointer capitalize w-30 text-md">
+                                <SelectValue  placeholder="month" />
                             </SelectTrigger>
                             <SelectContent side="bottom" position="popper" className="z-50 bg-[var(--bg-primary)] border-0 shadow-2xl p-2">
                                 <SelectGroup className="*:text-base  *:cursor-pointer *:hover:bg-[var(--background)]">

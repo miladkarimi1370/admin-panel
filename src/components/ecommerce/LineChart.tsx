@@ -23,7 +23,7 @@ ChartJS.register(
 
 
 export default function LineChart() {
-    const DATA_COUNT = 30;
+    const DATA_COUNT = 10;
     const { dark } = openOrCloseDrawerStore();
 
     const labels = useMemo(() => {
@@ -36,7 +36,7 @@ export default function LineChart() {
         });
     }, []);
 
-    const datapoints = [[1, 7], [1, 2], [2, 4], [3, 8], [6, 19], [6, 9], [9, 15], [12, 20]];
+    const datapoints = [[1, 7], [3, 2], [5, 4], [8, 8], [10, 19], [15, 9], [22, 15], [28, 50]];
     const data = {
         
         labels,
@@ -70,7 +70,7 @@ export default function LineChart() {
                 suggestedMin: 1,
                 suggestedMax: 31,
                 ticks: { color: dark ? "white" : "black" },
-                grid: { color: dark ? "#cecece" : "#cecece" },
+                grid: { color: dark ? "#f5f5f5" : "#f5f5f5" },
             },
         },
 

@@ -31,7 +31,7 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 type FormData = {
     currentPassword: string,
@@ -51,7 +51,7 @@ const formSchema = z.object({
 
 
 export default function Security() {
-
+    const { pathname } = useLocation();
     interface verificationValid {
         title: string,
         avatar: string,
@@ -99,19 +99,19 @@ export default function Security() {
                     <div className="xl:col-span-1">
                         <ul className=" rounded-2xl w-11/12  justify-start items-start px-2 flex-col hidden xl:flex">
 
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <User2 className="group-hover:text-[var(--foreground-primary)]   transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3 ">profile</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/security" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/security"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Shield className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">security</p>
                                 </NavLink>
                             </li>
-                            <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                            <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/notification" ? "bg-[var(--background)]" : ""}`}>
                                 <NavLink to={"/account/notification"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                     <Bell className="group-hover:text-[var(--foreground-primary)]  transition" />
                                     <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">notification</p>
@@ -134,17 +134,17 @@ export default function Security() {
 
                         <form onSubmit={onSubmit} className=" *:py-2 *:my-2 **:rounded-2xl ">
                             <div className="w-full flex flex-col my-2">
-                                <label>current Password :</label>
+                                <label className="text-[var(--foreground-primary)]">current Password :</label>
                                 <input {...register("currentPassword")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500  text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>New Password :</label>
+                                <label className="text-[var(--foreground-primary)]">New Password :</label>
                                 <input {...register("newPassword")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
                             <div className="w-full flex flex-col my-2">
-                                <label>Confirm New Password :</label>
+                                <label className="text-[var(--foreground-primary)]">Confirm New Password :</label>
                                 <input {...register("newPassword")} className="bg-[var(--background)] py-2 my-2 focus-visible:outline-blue-500 text-[var(--foreground)] px-2" />
 
                             </div>
@@ -183,18 +183,18 @@ export default function Security() {
                                     <React.Fragment key={index}>
                                         <Item>
                                             <ItemMedia>
-                                                <Avatar>
-                                                    <AvatarImage src={info.avatar} className="grayscale" />
+                                                <Avatar className="bg-blue-500 w-10 h-10 text-white">
+                                                    <AvatarImage src={info.avatar} className=" " />
                                                     <AvatarFallback>{info.title.charAt(0)}</AvatarFallback>
                                                 </Avatar>
                                             </ItemMedia>
                                             <ItemContent className="gap-1">
-                                                <ItemTitle>{info.title}</ItemTitle>
-                                                <ItemDescription>{info.subTitle}</ItemDescription>
+                                                <ItemTitle className="text-[var(--foreground-primary)] font-bold text-base">{info.title}</ItemTitle>
+                                                <ItemDescription className="text-[var(--foreground)]">{info.subTitle}</ItemDescription>
                                             </ItemContent>
                                             <ItemActions>
-                                                <Button variant="outline" className="border-blue-500 cursor-pointer text-[var(--foreground)]">
-                                                        {info.button_text}
+                                                <Button variant="outline" className="border-blue-500  cursor-pointer text-[var(--foreground-primary)]">
+                                                    {info.button_text}
                                                 </Button>
                                             </ItemActions>
                                         </Item>

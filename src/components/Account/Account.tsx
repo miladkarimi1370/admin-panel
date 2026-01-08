@@ -22,10 +22,13 @@ import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore"
 import { useEffect } from "react"
 import { Separator } from "../ui/separator"
 
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet, useLocation } from "react-router-dom"
 
 
 export default function Account() {
+
+    const { pathname } = useLocation();
+
 
     const { accountDrawer, setAccountDrawer } = openOrCloseDrawerStore();
 
@@ -59,19 +62,19 @@ export default function Account() {
                                         <div className=" w-full flex justify-center items-start">
                                             <ul className=" rounded-2xl w-11/12 flex justify-start items-start px-2 flex-col ">
 
-                                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/profile" ? "bg-[var(--background)]" : ""}`}>
                                                     <NavLink to={"/account/profile"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                                         <User2 className="group-hover:text-[var(--foreground-primary)]   transition" />
                                                         <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3 ">profile</p>
                                                     </NavLink>
                                                 </li>
-                                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/security" ? "bg-[var(--background)]" : ""}`}>
                                                     <NavLink to={"/account/security"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                                         <Shield className="group-hover:text-[var(--foreground-primary)]  transition" />
                                                         <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">security</p>
                                                     </NavLink>
                                                 </li>
-                                                <li className="group rounded-2xl w-full hover:bg-[var(--background)]">
+                                                <li className={`group rounded-2xl w-full hover:bg-[var(--background)] ${pathname === "/account/notification" ? "bg-[var(--background)]" : ""}`}>
                                                     <NavLink to={"/account/notification"} className="*:text-[var(--foreground)]  flex justify-start gap-2 items-center w-full p-4">
                                                         <Bell className="group-hover:text-[var(--foreground-primary)]  transition" />
                                                         <p className="group-hover:text-[var(--foreground-primary)] capitalize text-base font-bold mx-3">notification</p>
@@ -91,7 +94,7 @@ export default function Account() {
                         </CardHeader>
 
                         <CardContent className="w-full  ">
-            
+
                             <Outlet />
                         </CardContent>
                     </Card >

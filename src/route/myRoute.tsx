@@ -1,22 +1,22 @@
-// src/route/myRoute.js
+
 import BaseStructure from "@/BaseStructure";
-import Account from "@/components/Account/Account";
-import NotificationAccount from "@/components/Account/NotificationAccount";
-import PersonalInformation from "@/components/Account/PersonalInformation";
-import Security from "@/components/Account/Security";
-import Ecommerce from "@/components/ecommerce/Ecommerce";
-import Marketing from "@/components/marketing/Marketing";
-import Project from "@/components/project/Project";
+import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-
+const Ecommerce = lazy(() => import("@/components/ecommerce/Ecommerce"))
+const Project = lazy(() => import("@/components/project/Project"));
+const Marketing = lazy(() => import("@/components/marketing/Marketing"));
+const Account = lazy(() => import("@/components/Account/Account"));
+const PersonalInformation = lazy(() => import("@/components/Account/PersonalInformation"));
+const NotificationAccount = lazy(() => import("@/components/Account/NotificationAccount"));
+const Security = lazy(() => import("@/components/Account/Security"));
 const routes = [
   {
     path: "/",
     element: <BaseStructure />,
     children: [
       { index: true, element: <Navigate to="/ecommerce" replace /> },
-      { path: "ecommerce", element: <Ecommerce /> },
+      { path: "/ecommerce", element: <Ecommerce /> },
       { path: "project", element: <Project /> },
       { path: "marketing", element: <Marketing /> },
       {

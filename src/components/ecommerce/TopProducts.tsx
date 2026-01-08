@@ -103,7 +103,7 @@ export default function TopProducts() {
                                     <ItemMedia variant="image">
                                         <Avatar>
                                             <AvatarImage src={`${info?.src}`} />
-                                            <AvatarFallback>{info?.title.slice(0, 2)}</AvatarFallback>
+                                            <AvatarFallback className="text-[var(--foreground-primary)]">{info?.title.slice(0, 2)}</AvatarFallback>
                                         </Avatar>
                                     </ItemMedia>
                                     <ItemContent>
