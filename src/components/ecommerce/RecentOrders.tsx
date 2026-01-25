@@ -2,8 +2,7 @@ import {
     Card,
     CardAction,
     CardContent,
-    CardDescription,
-    CardFooter,
+
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -12,7 +11,7 @@ import {
 import {
     Table,
     TableBody,
-    TableCaption,
+
     TableCell,
     TableHead,
     TableHeader,

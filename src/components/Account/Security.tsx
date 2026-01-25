@@ -1,16 +1,16 @@
 import {
     Card,
-    CardAction,
+
     CardContent,
     CardDescription,
-    CardFooter,
+
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
 import { Bell, LogOut, Shield, User2 } from "lucide-react"
 import { Button } from "../ui/button"
-import { email, string, z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod"
+// import { email, string, z } from "zod";
+// import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 
 import {
@@ -41,12 +41,12 @@ type FormData = {
 }
 
 
-const formSchema = z.object({
-    currentPassword: z.string().min(2, "نام کوچک باید حداقل 3 کاراکتر باشد").max(20, "نام کوچک نباید از 20 کاراکتر بیشتر باشد"),
-    newPassword: z.string("نام کاربری باید شامل اعداد و حروف باشد").min(3, "نام کاربری باید حداقل شامل 3 کاراکتر باشد").max(20, "نام کاربری نباشد از 20 کاراکتر بیشتر باشد"),
+// const formSchema = z.object({
+//     currentPassword: z.string().min(2, "نام کوچک باید حداقل 3 کاراکتر باشد").max(20, "نام کوچک نباید از 20 کاراکتر بیشتر باشد"),
+//     newPassword: z.string("نام کاربری باید شامل اعداد و حروف باشد").min(3, "نام کاربری باید حداقل شامل 3 کاراکتر باشد").max(20, "نام کاربری نباشد از 20 کاراکتر بیشتر باشد"),
 
 
-})
+// })
 
 
 

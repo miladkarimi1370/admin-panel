@@ -1,9 +1,8 @@
 import {
     Card,
-    CardAction,
+
     CardContent,
-    CardDescription,
-    CardFooter,
+
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
@@ -14,10 +13,9 @@ import {
     ItemActions,
     ItemContent,
     ItemDescription,
-    ItemFooter,
+
     ItemGroup,
-    ItemHeader,
-    ItemMedia,
+
     ItemSeparator,
     ItemTitle,
 } from "@/components/ui/item";

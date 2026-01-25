@@ -11,9 +11,9 @@ import { Button } from "../ui/button";
 import {
     Table,
     TableBody,
-    TableCaption,
+
     TableCell,
-    TableFooter,
+
     TableHead,
     TableHeader,
     TableRow,

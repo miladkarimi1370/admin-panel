@@ -2,8 +2,7 @@ import {
     Card,
     CardAction,
     CardContent,
-    CardDescription,
-    CardFooter,
+
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -14,8 +13,8 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { Button } from "../ui/button";
-import { email, string, z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod"
+// import { string, z } from "zod";
+
 import { useForm } from "react-hook-form";
 import { Bell, LogOut, Shield, User2 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
@@ -32,16 +31,16 @@ type FormData = {
 }
 
 
-const formSchema = z.object({
-    firstName: z.string().min(2, "نام کوچک باید حداقل 3 کاراکتر باشد").max(20, "نام کوچک نباید از 20 کاراکتر بیشتر باشد"),
-    userName: z.string("نام کاربری باید شامل اعداد و حروف باشد").min(3, "نام کاربری باید حداقل شامل 3 کاراکتر باشد").max(20, "نام کاربری نباشد از 20 کاراکتر بیشتر باشد"),
-    email: z.email("ایمیل شما نادرست است"),
-    phoneNumber: z.string(),
-    country: string("کشور فقط شامل حروف می باشد"),
-    address: z.string("کشور فقط شامل حروف می باشد"),
-    city: z.string(""),
-    postalCode: z.string()
-})
+// const formSchema = z.object({
+//     firstName: z.string().min(2, "نام کوچک باید حداقل 3 کاراکتر باشد").max(20, "نام کوچک نباید از 20 کاراکتر بیشتر باشد"),
+//     userName: z.string("نام کاربری باید شامل اعداد و حروف باشد").min(3, "نام کاربری باید حداقل شامل 3 کاراکتر باشد").max(20, "نام کاربری نباشد از 20 کاراکتر بیشتر باشد"),
+//     email: z.email("ایمیل شما نادرست است"),
+//     phoneNumber: z.string(),
+//     country: string("کشور فقط شامل حروف می باشد"),
+//     address: z.string("کشور فقط شامل حروف می باشد"),
+//     city: z.string(""),
+//     postalCode: z.string()
+// })
 
 export default function PersonalInformation() {
 
@@ -166,7 +165,7 @@ export default function PersonalInformation() {
                                         setValue("firstName", "milad")
                                         setValue("userName", "mili1370")
                                         setValue("email", "12333@gmail.com")
-                                        setValue("phoneNumber", "09125554585")
+                                        // setValue("phoneNumber", "09125554585")
                                         setValue("country", "Iran")
                                         setValue("address", "Keshavarz Blv Forsat Shirazi")
                                         setValue("city", "Tehran")

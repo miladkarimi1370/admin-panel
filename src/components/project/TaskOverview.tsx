@@ -20,7 +20,7 @@ import {
     CategoryScale,
     Tooltip,
     Legend,
-    scales,
+
 } from "chart.js";
 
 ChartJS.register(

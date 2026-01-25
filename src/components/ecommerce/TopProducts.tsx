@@ -2,8 +2,7 @@ import {
     Card,
     CardAction,
     CardContent,
-    CardDescription,
-    CardFooter,
+
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -23,12 +22,7 @@ import {
     ItemTitle,
 } from "@/components/ui/item"
 import { Button } from "@/components/ui/button"
-import product10 from "@/components/icons/product-10.jpg";
-import product12 from "@/components/icons/product-12.jpg";
-import product3 from "@/components/icons/product-3.jpg";
-import product6 from "@/components/icons/product-6.jpg";
-import product7 from "@/components/icons/product-7.jpg";
-import product9 from "@/components/icons/product-9.jpg";
+
 
 
 
@@ -97,7 +91,7 @@ export default function TopProducts() {
                     {/* شروع قسمت بالای چارت */}
 
                     <ItemGroup className="gap-4">
-                        {infoProducts?.map((info, index) => (
+                        {infoProducts?.map((info) => (
                             <Item key={info.title} variant="muted" asChild role="listitem">
                                 <a href="#">
                                     <ItemMedia variant="image">

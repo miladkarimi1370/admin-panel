@@ -6,7 +6,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from "../ui/button";
-import { Badge } from "@/components/ui/badge";
+
 import { Building, Building2, Calendar, Store, type LucideIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { openOrCloseDrawerStore } from "@/store/openAndCloseDarwerStore";

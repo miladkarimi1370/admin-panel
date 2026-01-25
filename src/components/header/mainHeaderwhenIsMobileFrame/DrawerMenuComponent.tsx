@@ -26,7 +26,7 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function DrawerMenuComponent() {
     const { pathname } = useLocation();
 
-    const { open, setOpenAndClose } = openOrCloseDrawerStore();
+    const {  setOpenAndClose } = openOrCloseDrawerStore();
     const handleClick: any = (e: any): void => {
 
         const innerWidth = window.innerWidth;

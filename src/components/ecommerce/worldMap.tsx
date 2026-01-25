@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import type { LatLngExpression, LatLngTuple } from "leaflet"; // LatLngTuple اضافه شد
+import type { LatLngTuple } from "leaflet"; // LatLngTuple اضافه شد
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
@@ -17,7 +17,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function TopCountriesMap() {
 
-    const mapCenter: LatLngExpression = [40.7128, -74.006];
+
 
     // تغییر تایپ به LatLngTuple برای اینکه مطمئن باشیم آرایه اعداد است
     const positions: LatLngTuple[] = [
