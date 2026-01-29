@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# 🛍️ Milad Admin Panel – Modern E-commerce Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, fully responsive, and modern **admin panel** template for managing an online shop (products, orders, users, analytics, etc.).  
+Built as a Single Page Application (SPA) with the latest frontend technologies.
 
-Currently, two official plugins are available:
+![Main Dashboard Preview](https://github.com/user-attachments/assets/7da15a2b-852e-421d-8ea3-f51fec102ce6)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- Fully **responsive** design — looks great on mobile, tablet, and desktop
+- Modern & clean UI built with **Tailwind CSS**
+- Type-safe codebase using **TypeScript**
+- Fast development & build with **Vite**
+- Client-side routing with **React Router v6**
+- Beautiful & interactive charts powered by **Chart.js**
+- Dark/Light mode support (if implemented — add here if yes)
+- Sidebar navigation + user profile dropdown
+- SPA architecture (no page reloads)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖥️ Live Demo
 
-## Expanding the ESLint configuration
+🔗 https://admin-panel-green-nine.vercel.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Screenshots
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Desktop – Main Dashboard
+![Desktop Dashboard](https://github.com/user-attachments/assets/7da15a2b-852e-421d-8ea3-f51fec102ce6)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Header & User Menu
+![Header and User Menu](https://github.com/user-attachments/assets/f23fcc72-5253-4309-82f9-50b3143530b1)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Mobile Responsive View
+![Mobile View](https://github.com/user-attachments/assets/d5d30789-b0e2-494b-ac2c-63f1027948fb)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*(Tip: Add 1–2 more screenshots if you have pages like Products list, Orders, Analytics, etc.)*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Technology       | Purpose                          |
+|------------------|----------------------------------|
+| React 18         | UI library                       |
+| TypeScript       | Type safety                      |
+| Vite             | Build tool & dev server          |
+| React Router v6  | Client-side routing              |
+| Tailwind CSS     | Utility-first styling            |
+| Chart.js         | Data visualization / charts      |
+
+(Optional — add if you use them:  
+Zustand / Redux Toolkit, TanStack Query, Axios, React Hook Form, etc.)
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/miladkarimi1370/YOUR-REPOSITORY-NAME.git
+
+# 2. Go to the project folder
+cd YOUR-REPOSITORY-NAME
+
+# 3. Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+
+# 4. Start development server
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
